@@ -38,6 +38,14 @@ emiter_value = {
 "signal3": false
 }
 
+[node name="engine2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -116.922, 139.528 )
+emiter_value = {
+"signal1": true,
+"signal2": false,
+"signal3": false
+}
+
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 592.438, 126.248 )
 scale = Vector2( 1, 1 )

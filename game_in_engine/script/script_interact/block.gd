@@ -5,7 +5,7 @@ var move = Vector2()
 
 
 func _physics_process(delta):
-	print(in_hands)
+	
 	in_hands = player_singleton.object_in_hand 
 	if in_hands == false and player_in_area == false  and player_singleton.with_object == false:
 		move.y = + 60
