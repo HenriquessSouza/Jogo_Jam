@@ -11,19 +11,31 @@ var in_area = false
 func _physics_process(delta):
 	move.y += gravity
 	player_singleton.with_object = with_object
+	
 	if Input.is_action_pressed("ui_graby") and in_area == true:
 		player_singleton.pos_object = $position_objects.global_position
 		player_singleton.with_object = true
+		$animationplayer.play("graby")
+	
+	
 	if Input.is_action_just_released("ui_graby") and in_area == false:
-		player_singleton.with_object = false
+		player_singleton.with_object = false 
+		
 		
 		
 	if Input.is_action_pressed("ui_left"):
 		move.x =- speed
+		$animationplayer.play("run")
+		$animationplayer.flip_h = false
+		
 	elif Input.is_action_pressed("ui_right"):
 		move.x =+ speed
+		$animationplayer.play("run")
+		$animationplayer.flip_h = true
+	
 	else:
 		move.x = 0 
+		$animationplayer.play("idlle")
 	move_and_slide(move)
 
 

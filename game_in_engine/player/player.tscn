@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://player/player.gd" type="Script" id=2]
@@ -8,6 +8,29 @@ extents = Vector2( 35, 39 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 55.3815, 60.9858 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "graby",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "idlle",
+"speed": 5.0
+} ]
 
 [node name="player" type="KinematicBody2D" groups=[
 "player",
@@ -34,6 +57,10 @@ shape = SubResource( 2 )
 
 [node name="delay_graby" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="animationplayer" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+animation = "graby"
 [connection signal="body_entered" from="area_hand" to="." method="_on_area_hand_body_entered"]
 [connection signal="body_exited" from="area_hand" to="." method="_on_area_hand_body_exited"]
 [connection signal="timeout" from="delay_graby" to="." method="_on_delay_graby_timeout"]
