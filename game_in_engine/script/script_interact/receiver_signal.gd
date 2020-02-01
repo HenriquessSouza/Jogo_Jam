@@ -8,29 +8,34 @@ var stop_check = false
 func check_signal_emited():
 	
 	
-	if machine_singleton.emitter_value.sinal1 == true and machine_singleton.emited_signal_engine == true  and receiver_channel == 1 and pauseanimation.chanel1 == false:
+	if machine_singleton.emitter_value.sinal1 == true and machine_singleton.emited_signal_engine == true  and receiver_channel == 1 and pauseanimation.chanel1 == false and machine_singleton.key_in_hand >= 1:
 		$AnimationPlayer.current_animation =""+str(name_animation)+""
 		#if animation_pause == true:
 		pauseanimation.chanel1 = true
+		machine_singleton.key_in_hand -= 1
 		#else:
 		#	pauseanimation = false
-	if machine_singleton.emitter_value.sinal2 == true and machine_singleton.emited_signal_engine == true and receiver_channel == 2 and pauseanimation.chanel2 == false:
+	if machine_singleton.emitter_value.sinal2 == true and machine_singleton.emited_signal_engine == true and receiver_channel == 2 and pauseanimation.chanel2 == false and machine_singleton.key_in_hand >= 1:
 		$AnimationPlayer.current_animation =""+str(name_animation)+""
 		pauseanimation.chanel2 = true
-	if machine_singleton.emitter_value.sinal3 == true  and machine_singleton.emited_signal_engine == true and receiver_channel == 3 and pauseanimation.chanel3 == false:
+		machine_singleton.key_in_hand -= 1
+	if machine_singleton.emitter_value.sinal3 == true  and machine_singleton.emited_signal_engine == true and receiver_channel == 3 and pauseanimation.chanel3 == false and machine_singleton.key_in_hand >= 1:
 		$AnimationPlayer.current_animation =""+str(name_animation)+""
 		pauseanimation.chanel3 = true
+		machine_singleton.key_in_hand -= 1
 		
-	if machine_singleton.emitter_value.sinal4 == true  and machine_singleton.emited_signal_engine == true and receiver_channel == 4 and pauseanimation.chanel4 == false:
+	if machine_singleton.emitter_value.sinal4 == true  and machine_singleton.emited_signal_engine == true and receiver_channel == 4 and pauseanimation.chanel4 == false and machine_singleton.key_in_hand >= 1:
 		$AnimationPlayer.current_animation =""+str(name_animation)+""
 		pauseanimation.chanel4 = true
+		machine_singleton.key_in_hand -= 1
 		
-	if machine_singleton.emitter_value.sinal5 == true  and machine_singleton.emited_signal_engine == true and receiver_channel == 5 and pauseanimation.chanel5 == false:
+	if machine_singleton.emitter_value.sinal5 == true  and machine_singleton.emited_signal_engine == true and receiver_channel == 5 and pauseanimation.chanel5 == false and machine_singleton.key_in_hand >= 1:
 		$AnimationPlayer.current_animation =""+str(name_animation)+""
 		pauseanimation.chanel5 = true
-	if machine_singleton.emitter_value.sinal6 == true  and machine_singleton.emited_signal_engine == true and receiver_channel == 6 and pauseanimation.chanel6 == false:
+		machine_singleton.key_in_hand -= 1
+	if machine_singleton.emitter_value.sinal6 == true  and machine_singleton.emited_signal_engine == true and receiver_channel == 6 and pauseanimation.chanel6 == false and machine_singleton.key_in_hand >= 1:
 		$AnimationPlayer.current_animation =""+str(name_animation)+""
 		pauseanimation.chanel6 = true
-		
+		machine_singleton.key_in_hand -= 1
 func _on_check_status_timeout():
 	check_signal_emited()
