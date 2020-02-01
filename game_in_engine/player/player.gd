@@ -44,6 +44,8 @@ func _physics_process(delta):
 
 func restart_position_checkpoint():
 	position = player_singleton.pos_checkpoint
+	
+	
 func _on_area_hand_body_entered(body):
 	if body.is_in_group("block") and with_object == false :
 		in_area = true
