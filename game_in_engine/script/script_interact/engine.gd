@@ -51,5 +51,5 @@ func _on_engine_body_entered(body):
 
 func _on_engine_body_exited(body):
 	if body.is_in_group("player"):
-		it_is_in_area = true
+		it_is_in_area = false
 		signal_emited = false
