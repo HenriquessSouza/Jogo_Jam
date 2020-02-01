@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://player/player.gd" type="Script" id=2]
@@ -32,6 +32,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 29.0185, 7.02353 )
+
 [node name="player" type="KinematicBody2D" groups=[
 "player",
 ]]
@@ -61,6 +64,14 @@ wait_time = 0.1
 [node name="animationplayer" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "graby"
+
+[node name="foot_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="foot_area"]
+position = Vector2( -1.96527, 38.2818 )
+shape = SubResource( 4 )
 [connection signal="body_entered" from="area_hand" to="." method="_on_area_hand_body_entered"]
 [connection signal="body_exited" from="area_hand" to="." method="_on_area_hand_body_exited"]
 [connection signal="timeout" from="delay_graby" to="." method="_on_delay_graby_timeout"]
+[connection signal="body_entered" from="foot_area" to="." method="_on_foot_area_body_entered"]
+[connection signal="body_exited" from="foot_area" to="." method="_on_foot_area_body_exited"]

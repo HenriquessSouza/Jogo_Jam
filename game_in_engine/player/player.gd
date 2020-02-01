@@ -6,10 +6,11 @@ const gravity = 20
 var cont_object = 0
 var with_object = false
 var in_area = false
-
+var in_plataform = false
 
 func _physics_process(delta):
-	move.y += gravity
+	if in_plataform == false :
+		move.y += gravity
 	player_singleton.with_object = with_object
 	
 	if Input.is_action_pressed("ui_graby") and in_area == true:
@@ -53,3 +54,14 @@ func _on_area_hand_body_exited(body):
 
 func _on_delay_graby_timeout(body):
 	pass
+
+
+func _on_foot_area_body_entered(body):
+	if body.is_in_group("plataform"):
+		in_plataform = true
+		
+
+
+func _on_foot_area_body_exited(body):
+	if body.is_in_group("plataform"):
+		in_plataform = false
