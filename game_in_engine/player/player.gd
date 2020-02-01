@@ -13,10 +13,10 @@ func _physics_process(delta):
 	player_singleton.with_object = with_object
 	if Input.is_action_pressed("ui_graby") and in_area == true:
 		player_singleton.pos_object = $position_objects.global_position
-	if Input.is_action_just_released("ui_graby"):
-		with_object = false
-		cont_object = 0
-		player_singleton.cont_object = cont_object  
+		player_singleton.with_object = true
+	if Input.is_action_just_released("ui_graby") and in_area == false:
+		player_singleton.with_object = false
+		
 		
 	if Input.is_action_pressed("ui_left"):
 		move.x =- speed

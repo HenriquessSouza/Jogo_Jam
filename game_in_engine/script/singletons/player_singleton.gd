@@ -1,5 +1,5 @@
 extends Node
-var cont_object =0
-var with_object 
+
+var with_object = false
 var object_in_hand 
 var pos_object = Vector2()
