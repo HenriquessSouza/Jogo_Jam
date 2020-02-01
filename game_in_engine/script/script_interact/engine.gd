@@ -47,6 +47,7 @@ func emiter_signal():
 				machine_singleton.key_in_hand -= 1
 
 func _on_engine_body_entered(body):
+	
 	print(emiter_value)
 	if body.is_in_group("player"):
 		it_is_in_area = true
