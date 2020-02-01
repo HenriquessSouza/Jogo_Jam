@@ -1,7 +1,7 @@
 extends Node2D
 export var receiver_channel = 0 
 export var name_animation = ""
-export var animation_pause = false
+#export var animation_pause = false
 var pauseanimation = {"chanel1":false,"chanel2":false,"chanel3":false,"chanel4":false,"chanel5":false,"chanel6":false}
 var stop_check = false
 

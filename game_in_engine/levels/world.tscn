@@ -1,11 +1,64 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://interact/key.tscn" type="PackedScene" id=3]
+[ext_resource path="res://interact/engine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interact/receiver_signal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/gui_keys.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 419, 10 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "x"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 44.1891, -73.7214 ), Vector2( -26.973, -79.723 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -103.957 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "y"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 31.725, -117.615 ), Vector2( 48.7482, -32.4988 ) ]
+}
+
 [node name="world" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gui_keys" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -18,3 +71,65 @@ position = Vector2( 254, 16 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
+
+[node name="engine" parent="." instance=ExtResource( 4 )]
+position = Vector2( 109.352, 173.479 )
+emiter_value = {
+"signal1": false,
+"signal2": true,
+"signal3": false,
+"signal4": false,
+"signal5": false,
+"signal6": false
+}
+
+[node name="receiver_signal" parent="." instance=ExtResource( 5 )]
+position = Vector2( 489.177, 142 )
+receiver_channel = 1
+name_animation = "x"
+
+[node name="AnimationPlayer" parent="receiver_signal" index="0"]
+anims/x = SubResource( 2 )
+
+[node name="Sprite" parent="receiver_signal" index="1"]
+position = Vector2( 44.1891, -73.7214 )
+texture = ExtResource( 2 )
+
+[node name="receiver_signal2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 306.023, 141.687 )
+receiver_channel = 2
+name_animation = "y"
+
+[node name="AnimationPlayer" parent="receiver_signal2" index="0"]
+anims/y = SubResource( 3 )
+
+[node name="Sprite" parent="receiver_signal2" index="1"]
+position = Vector2( 31.725, -117.615 )
+texture = ExtResource( 2 )
+
+[node name="engine2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 212.016, 160.173 )
+emiter_value = {
+"signal1": true,
+"signal2": false,
+"signal3": false,
+"signal4": false,
+"signal5": false,
+"signal6": false
+}
+
+[node name="key" parent="." instance=ExtResource( 3 )]
+position = Vector2( 312.942, 174.047 )
+
+[node name="key2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 336.091, 171.475 )
+
+[node name="key3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 362.67, 172.332 )
+
+[node name="key4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 479.273, 170.618 )
+
+[editable path="receiver_signal"]
+
+[editable path="receiver_signal2"]
