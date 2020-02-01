@@ -4,10 +4,10 @@
 [ext_resource path="res://assets/tilestes/caixa.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.85298, 7.71628 )
+extents = Vector2( 7.29626, 7.70501 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 9.67629, 13.1929 )
+extents = Vector2( 9.87904, 14.1321 )
 
 [node name="block" type="KinematicBody2D" groups=[
 "block",

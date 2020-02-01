@@ -1,22 +1,29 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://interact/block.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/gui_keys.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 419, 10 )
 
 [node name="world" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gui_keys" parent="CanvasLayer" instance=ExtResource( 6 )]
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 408, 193 )
 shape = SubResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-editor/display_folded = true
 position = Vector2( 254, 16 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
+
+[node name="block" parent="." instance=ExtResource( 2 )]
+position = Vector2( 234.084, 84.7015 )

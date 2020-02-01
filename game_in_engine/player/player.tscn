@@ -60,7 +60,7 @@ position = Vector2( -0.295464, 0.898174 )
 shape = SubResource( 5 )
 
 [node name="position_objects" type="Position2D" parent="."]
-position = Vector2( 0.154655, -12.9896 )
+position = Vector2( 0.154655, -19.1126 )
 
 [node name="area_hand" type="Area2D" parent="."]
 position = Vector2( 0.220367, -0.220366 )

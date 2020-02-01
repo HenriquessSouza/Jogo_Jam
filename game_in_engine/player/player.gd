@@ -31,12 +31,12 @@ func _physics_process(delta):
 		move.x =- speed
 		$animationplayer.play("run")
 		$animationplayer.flip_h = true
-		
+		player_singleton.side_current = true
 	elif Input.is_action_pressed("ui_right"):
 		move.x =+ speed
 		$animationplayer.play("run")
 		$animationplayer.flip_h = false
-	
+		player_singleton.side_current = false
 	else:
 		move.x = 0 
 		$animationplayer.play("idlle")
