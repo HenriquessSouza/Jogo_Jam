@@ -42,7 +42,8 @@ func _physics_process(delta):
 		$animationplayer.play("idlle")
 	move_and_slide(move)
 
-
+func restart_position_checkpoint():
+	position = player_singleton.pos_checkpoint
 func _on_area_hand_body_entered(body):
 	if body.is_in_group("block") and with_object == false :
 		in_area = true
@@ -68,3 +69,12 @@ func _on_foot_area_body_entered(body):
 func _on_foot_area_body_exited(body):
 	if body.is_in_group("plataform"):
 		in_plataform = false
+
+
+func _on_body_area_body_entered(body):
+	if body.is_in_group("trap"):
+		$animationplayer.play("death")
+
+func _on_animationplayer_animation_finished(anim_name):
+	if anim_name == "death":
+		restart_position_checkpoint()
