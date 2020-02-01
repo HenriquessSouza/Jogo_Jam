@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://interact/engine.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://interact/block.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/gui_keys.tscn" type="PackedScene" id=5]
 [ext_resource path="res://interact/key.tscn" type="PackedScene" id=6]
+[ext_resource path="res://interact/portal.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 884.748, 10 )
@@ -51,3 +52,7 @@ shape = SubResource( 1 )
 
 [node name="receiver_signal" parent="." instance=ExtResource( 3 )]
 position = Vector2( -12.596, 96.6274 )
+
+[node name="portal" parent="." instance=ExtResource( 7 )]
+position = Vector2( -9.61091, 85.3031 )
+next_scene = 2

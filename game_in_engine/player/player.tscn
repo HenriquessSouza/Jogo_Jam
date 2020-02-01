@@ -66,6 +66,7 @@ frames = SubResource( 3 )
 animation = "graby"
 
 [node name="foot_area" type="Area2D" parent="."]
+position = Vector2( 1.85318, 2.77975 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="foot_area"]
 position = Vector2( -1.96527, 38.2818 )
