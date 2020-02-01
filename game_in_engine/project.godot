@@ -19,6 +19,10 @@ config/name="ReBuilD"
 run/main_scene="res://levels/world.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+machine_singleton="*res://script/singletons/machine_singleton.gd"
+
 [input]
 
 ui_left={
