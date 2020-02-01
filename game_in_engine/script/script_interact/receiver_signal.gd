@@ -14,13 +14,13 @@ func check_signal_emited():
 		else:
 			pauseanimation = false
 	if machine_singleton.emitter_value.sinal2 == true and machine_singleton.emited_signal_engine == true and receiver_channel == 2 and pauseanimation == false:
-		$AnimationPlayer.current_animation =""+str(name_animation)+""
+		$AnimationPlayer2.current_animation =""+str(name_animation)+""
 		if animation_pause == true:
 			pauseanimation = true
 		else:
 			pauseanimation = false
 	if machine_singleton.emitter_value.sinal3 == true  and machine_singleton.emited_signal_engine == true and receiver_channel == 3 and pauseanimation == false:
-		$AnimationPlayer.current_animation =""+str(name_animation)+""
+		$AnimationPlayer3.current_animation =""+str(name_animation)+""
 		if animation_pause == true:
 			pauseanimation = true
 		else:
