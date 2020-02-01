@@ -75,7 +75,7 @@ current = true
 [node name="engine" parent="." instance=ExtResource( 4 )]
 position = Vector2( 109.352, 173.479 )
 emiter_value = {
-"signal1": false,
+"signal1": true,
 "signal2": true,
 "signal3": false,
 "signal4": false,
