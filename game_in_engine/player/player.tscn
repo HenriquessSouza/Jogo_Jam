@@ -11,8 +11,9 @@
 [ext_resource path="res://player/run/walk.run/run3.png" type="Texture" id=9]
 [ext_resource path="res://player/carry/carry/carry4.png" type="Texture" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4.58945, 7.92658 )
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 4.53565
+height = 6.32986
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8.32838, 9.08421 )
@@ -52,7 +53,7 @@ script = ExtResource( 2 )
 "player",
 ]]
 position = Vector2( -0.295464, 0.898174 )
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="position_objects" type="Position2D" parent="."]
 position = Vector2( 0.0122604, -11.5656 )
