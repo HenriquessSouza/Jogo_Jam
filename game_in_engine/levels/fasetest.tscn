@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://interact/engine.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://interact/block.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/gui_keys.tscn" type="PackedScene" id=5]
 [ext_resource path="res://interact/key.tscn" type="PackedScene" id=6]
-[ext_resource path="res://interact/portal.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 884.748, 10 )
@@ -19,14 +18,16 @@ scale = Vector2( 1.01556, 0.991667 )
 [node name="gui_keys" parent="CanvasLayer" instance=ExtResource( 5 )]
 
 [node name="key" parent="CanvasLayer/gui_keys" instance=ExtResource( 6 )]
-position = Vector2( -5.55188, 133.245 )
+position = Vector2( -63.0007, 118.024 )
+
+[node name="key2" parent="CanvasLayer/gui_keys" instance=ExtResource( 6 )]
+position = Vector2( -21.1904, 116.572 )
+
+[node name="key3" parent="CanvasLayer/gui_keys" instance=ExtResource( 6 )]
+position = Vector2( 10.2636, 116.004 )
 
 [node name="block" parent="." instance=ExtResource( 4 )]
 position = Vector2( -365.745, -238.275 )
-scale = Vector2( 1, 1 )
-
-[node name="block2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 565.688, 99.6129 )
 scale = Vector2( 1, 1 )
 
 [node name="engine" parent="." instance=ExtResource( 1 )]
@@ -38,10 +39,11 @@ emiter_value = {
 }
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 164.846, 50.0152 )
+position = Vector2( 592.438, 126.248 )
 scale = Vector2( 1, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2( 2.29695, -19.9946 )
 current = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -52,7 +54,3 @@ shape = SubResource( 1 )
 
 [node name="receiver_signal" parent="." instance=ExtResource( 3 )]
 position = Vector2( 25.8482, -18.2036 )
-
-[node name="portal" parent="." instance=ExtResource( 7 )]
-position = Vector2( -9.61091, 85.3031 )
-next_scene = 2
