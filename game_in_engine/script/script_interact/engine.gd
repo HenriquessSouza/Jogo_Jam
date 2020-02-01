@@ -61,7 +61,7 @@ func emiter_signal():
 			if activate_engine == true :
 				signal_emited = true
 				machine_singleton.emited_signal_engine = signal_emited
-		machine_singleton.key_in_hand -= 1		
+		machine_singleton.key_in_hand -= 1
 				
 				
 func _on_engine_body_entered(body):

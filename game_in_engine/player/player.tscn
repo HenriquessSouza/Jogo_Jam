@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://player/run/walk.run/run2.png" type="Texture" id=1]
 [ext_resource path="res://player/player.gd" type="Script" id=2]
@@ -44,6 +44,10 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 3.44396, 2.20966 )
 
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 5.09455
+height = 7.68758
+
 [node name="player" type="KinematicBody2D" groups=[
 "player",
 ]]
@@ -56,7 +60,7 @@ position = Vector2( -0.295464, 0.898174 )
 shape = SubResource( 5 )
 
 [node name="position_objects" type="Position2D" parent="."]
-position = Vector2( 0.0122604, -11.5656 )
+position = Vector2( 0.154655, -12.9896 )
 
 [node name="area_hand" type="Area2D" parent="."]
 position = Vector2( 0.220367, -0.220366 )
@@ -79,8 +83,16 @@ position = Vector2( 3.73731, 1.73302 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="foot_area"]
 position = Vector2( -3.62961, 6.10634 )
 shape = SubResource( 4 )
+
+[node name="body_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body_area"]
+position = Vector2( -0.142387, 0.28479 )
+shape = SubResource( 6 )
 [connection signal="body_entered" from="area_hand" to="." method="_on_area_hand_body_entered"]
 [connection signal="body_exited" from="area_hand" to="." method="_on_area_hand_body_exited"]
 [connection signal="timeout" from="delay_graby" to="." method="_on_delay_graby_timeout"]
+[connection signal="animation_finished" from="animationplayer" to="." method="_on_animationplayer_animation_finished"]
 [connection signal="body_entered" from="foot_area" to="." method="_on_foot_area_body_entered"]
 [connection signal="body_exited" from="foot_area" to="." method="_on_foot_area_body_exited"]
+[connection signal="body_entered" from="body_area" to="." method="_on_body_area_body_entered"]
