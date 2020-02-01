@@ -12,7 +12,7 @@ var in_plataform = false
 
 func _physics_process(delta):
 	
-	if in_plataform == false :
+	if in_plataform == false and !is_on_floor() :
 		move.y =+gravity
 	player_singleton.with_object = with_object
 	
