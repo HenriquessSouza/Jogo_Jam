@@ -49,7 +49,6 @@ scale = Vector2( 1.01556, 0.991667 )
 
 [node name="block" parent="." instance=ExtResource( 4 )]
 position = Vector2( -365.745, -238.275 )
-scale = Vector2( 1, 1 )
 
 [node name="engine" parent="." instance=ExtResource( 1 )]
 position = Vector2( -213.272, 130.906 )
@@ -69,7 +68,6 @@ emiter_value = {
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 592.438, 126.248 )
-scale = Vector2( 1, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2( 2.29695, -19.9946 )
