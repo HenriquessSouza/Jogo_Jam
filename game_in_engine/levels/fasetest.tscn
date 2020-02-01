@@ -22,7 +22,7 @@ scale = Vector2( 1.01556, 0.991667 )
 position = Vector2( -5.55188, 133.245 )
 
 [node name="block" parent="." instance=ExtResource( 4 )]
-position = Vector2( -109.442, -160.103 )
+position = Vector2( -365.745, -238.275 )
 scale = Vector2( 1, 1 )
 
 [node name="block2" parent="." instance=ExtResource( 4 )]
@@ -38,7 +38,7 @@ emiter_value = {
 }
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 144.475, 117.615 )
+position = Vector2( 164.846, 50.0152 )
 scale = Vector2( 1, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -51,7 +51,7 @@ position = Vector2( 175.294, 168.375 )
 shape = SubResource( 1 )
 
 [node name="receiver_signal" parent="." instance=ExtResource( 3 )]
-position = Vector2( -12.596, 96.6274 )
+position = Vector2( 25.8482, -18.2036 )
 
 [node name="portal" parent="." instance=ExtResource( 7 )]
 position = Vector2( -9.61091, 85.3031 )

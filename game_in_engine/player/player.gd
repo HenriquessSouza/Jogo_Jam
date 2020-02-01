@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var move = Vector2()
 export var speed = 150
-const gravity = 20
+const gravity = 250
 var cont_object = 0
 var with_object = false
 var in_area = false
@@ -13,7 +13,7 @@ var in_plataform = false
 func _physics_process(delta):
 	
 	if in_plataform == false :
-		move.y += gravity
+		move.y =+gravity
 	player_singleton.with_object = with_object
 	
 	if Input.is_action_pressed("ui_graby") and in_area == true:
