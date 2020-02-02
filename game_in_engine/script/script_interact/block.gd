@@ -14,7 +14,7 @@ func _physics_process(delta):
 		
 	in_hands = player_singleton.object_in_hand 
 	
-	if  Input.is_action_just_pressed("ui_shoot") and shooting == false:
+	if  Input.is_action_just_pressed("ui_shoot") and shooting == false and player_singleton.with_object == true:
 		if player_singleton.side_current == true  and player_in_area == true:
 			position.x -= force_shoot  
 		if player_singleton.side_current == false and player_in_area == true :
@@ -40,10 +40,12 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player") and player_singleton.object_in_hand == false  :
 		player_in_area = true
-		
-
+		if machine_singleton.tutorial_box < 3 :
+			$Label.visible= true
+			machine_singleton.tutorial_box += 1
+	
 
 func _on_Area2D_body_exited(body) :
 	if body.is_in_group("player")and player_singleton.object_in_hand == false: 
 		player_in_area = false
-		
+		$Label.visible = false

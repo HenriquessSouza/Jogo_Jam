@@ -12,7 +12,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		if it_is_in_area == true :
 			activate_engine = true
-			
+			$audio_engine.play()
 			machine_singleton.activate_engine = activate_engine
 			emiter_signal()
 			
@@ -75,9 +75,12 @@ func _on_engine_body_entered(body):
 		machine_singleton.emitter_value.sinal4 = emiter_value.signal4
 		machine_singleton.emitter_value.sinal5 = emiter_value.signal5
 		machine_singleton.emitter_value.sinal6 = emiter_value.signal6
-
+		if machine_singleton.tutorial < 3:
+			machine_singleton.tutorial += 1
+			$Label.visible = true 
+			
 func _on_engine_body_exited(body):
 	if body.is_in_group("player"):
 		it_is_in_area = false
 		signal_emited = false
-
+		$Label.visible = false

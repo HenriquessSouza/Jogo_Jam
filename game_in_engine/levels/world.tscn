@@ -33,7 +33,7 @@ position = Vector2( 522.987, 144.34 )
 current = true
 
 [node name="block" parent="." instance=ExtResource( 2 )]
-position = Vector2( 234.084, 84.7015 )
+position = Vector2( 478.952, 148.639 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "trap",

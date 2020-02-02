@@ -32,11 +32,13 @@ func _physics_process(delta):
 			$animationplayer.play("run")
 			$animationplayer.flip_h = true
 			player_singleton.side_current = true
+			
 		elif Input.is_action_pressed("ui_right"):
 			move.x =+ speed
 			$animationplayer.play("run")
 			$animationplayer.flip_h = false
 			player_singleton.side_current = false
+			
 		else:
 			move.x = 0 
 			$animationplayer.play("idlle")
@@ -49,7 +51,8 @@ func restart_position_checkpoint():
 	
 func _on_area_hand_body_entered(body):
 	if body.is_in_group("block") and with_object == false :
-		in_area = true
+		in_area = true 
+		#player_singleton.object_in_hand = true
 		
 		
 func _on_area_hand_body_exited(body):
@@ -80,8 +83,10 @@ func _on_foot_area_body_exited(body):
 func _on_body_area_area_entered(area):
 	if area.is_in_group("trap"):
 		$animationplayer.play("death")
+		$audio_death.play()
 		death = true
 		$delay_death.start()
+
 
 func _on_delay_death_timeout():
 	restart_position_checkpoint()
