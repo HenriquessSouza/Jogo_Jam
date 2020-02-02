@@ -175,6 +175,7 @@ tile_data = PoolIntArray( -2490357, 1, 0, -2490356, 1, 0, -2490355, 1, 0, -24903
 
 [node name="engine" parent="." instance=ExtResource( 6 )]
 position = Vector2( 83.1841, -25.0873 )
+z_index = -1
 emiter_value = {
 "signal1": false,
 "signal2": true,

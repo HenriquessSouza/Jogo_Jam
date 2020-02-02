@@ -209,6 +209,7 @@ tile_data = PoolIntArray( -2490357, 1, 0, -2490356, 1, 0, -2490355, 1, 0, -24903
 
 [node name="engine" parent="." instance=ExtResource( 6 )]
 position = Vector2( 284.904, 871.294 )
+z_index = -1
 emiter_value = {
 "signal1": false,
 "signal2": true,
@@ -256,7 +257,7 @@ position = Vector2( 239.168, 0.340225 )
 shape = SubResource( 14 )
 
 [node name="Sprite" type="Sprite" parent="receiver_signal2/StaticBody2D/CollisionShape2D"]
-position = Vector2( 4.50462e-05, -3.8147e-06 )
+position = Vector2( 4.50462e-005, -3.8147e-006 )
 scale = Vector2( 1.65742, 1.01972 )
 texture = ExtResource( 4 )
 
