@@ -1,8 +1,8 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://player/run/walk.run/run2.png" type="Texture" id=1]
 [ext_resource path="res://player/player.gd" type="Script" id=2]
-[ext_resource path="res://player/unloadit/unload/unload1.png" type="Texture" id=3]
+[ext_resource path="res://player/ilde/idle/sprite_1.png" type="Texture" id=3]
 [ext_resource path="res://player/run/walk.run/run1.png" type="Texture" id=4]
 [ext_resource path="res://player/carry/carry/carry3.png" type="Texture" id=5]
 [ext_resource path="res://player/carry/carry/carry2.png" type="Texture" id=6]
@@ -18,8 +18,9 @@
 [ext_resource path="res://player/death/death/sprite_2.png" type="Texture" id=16]
 [ext_resource path="res://player/death/death/sprite_6.png" type="Texture" id=17]
 [ext_resource path="res://player/death/death/sprite_1.png" type="Texture" id=18]
+[ext_resource path="res://player/ilde/idle/sprite_0.png" type="Texture" id=19]
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 4.53565
 height = 6.32986
 
@@ -43,7 +44,7 @@ animations = [ {
 "name": "graby",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "idlle",
 "speed": 5.0
@@ -52,7 +53,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 3.44396, 2.20966 )
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 5.09455
 height = 7.68758
 
@@ -65,7 +66,7 @@ script = ExtResource( 2 )
 "player",
 ]]
 position = Vector2( -0.295464, 0.898174 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="position_objects" type="Position2D" parent="."]
 position = Vector2( 0.154655, -19.1126 )
@@ -83,7 +84,7 @@ wait_time = 0.1
 [node name="animationplayer" type="AnimatedSprite" parent="."]
 position = Vector2( 0.991653, 0.0716248 )
 frames = SubResource( 3 )
-animation = "graby"
+animation = "idlle"
 
 [node name="foot_area" type="Area2D" parent="."]
 position = Vector2( 3.73731, 1.73302 )
@@ -96,11 +97,16 @@ shape = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body_area"]
 position = Vector2( -0.142387, 0.28479 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
+
+[node name="delay_death" type="Timer" parent="."]
+one_shot = true
 [connection signal="body_entered" from="area_hand" to="." method="_on_area_hand_body_entered"]
 [connection signal="body_exited" from="area_hand" to="." method="_on_area_hand_body_exited"]
 [connection signal="timeout" from="delay_graby" to="." method="_on_delay_graby_timeout"]
 [connection signal="animation_finished" from="animationplayer" to="." method="_on_animationplayer_animation_finished"]
 [connection signal="body_entered" from="foot_area" to="." method="_on_foot_area_body_entered"]
 [connection signal="body_exited" from="foot_area" to="." method="_on_foot_area_body_exited"]
+[connection signal="area_entered" from="body_area" to="." method="_on_body_area_area_entered"]
 [connection signal="body_entered" from="body_area" to="." method="_on_body_area_body_entered"]
+[connection signal="timeout" from="delay_death" to="." method="_on_delay_death_timeout"]
