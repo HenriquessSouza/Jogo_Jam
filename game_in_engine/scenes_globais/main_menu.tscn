@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/interface/main_menu.gd" type="Script" id=1]
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="text_info" type="Label" parent="CanvasLayer"]
+margin_left = 14.9514
+margin_top = 556.259
+margin_right = 302.951
+margin_bottom = 570.259
+rect_scale = Vector2( 2, 2.32 )
+text = "esc  or circle to back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="butoncontainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_left = 1.022
+anchor_top = 0.551
+anchor_right = 1.138
+anchor_bottom = 0.553
+margin_left = -360.186
+margin_top = 14.4
+margin_right = -190.97
+margin_bottom = 119.2
+rect_min_size = Vector2( -0.261, 0 )
+rect_scale = Vector2( 1.017, 1.382 )
+custom_constants/separation = 23
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play_game " type="Button" parent="CanvasLayer/butoncontainer"]
+margin_right = 288.0
+margin_bottom = 20.0
+
+[node name="credits" type="Button" parent="CanvasLayer/butoncontainer"]
+margin_top = 43.0
+margin_right = 288.0
+margin_bottom = 63.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/butoncontainer/credits"]
+visible = false
+margin_left = -471.0
+margin_top = -262.0
+margin_right = -124.0
+margin_bottom = 97.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/butoncontainer/credits/Panel"]
+anchor_left = 0.489
+anchor_top = 0.5
+anchor_right = 0.535
+anchor_bottom = 0.5
+margin_left = -100.5
+margin_top = -106.0
+margin_right = 86.438
+margin_bottom = 72.5
+rect_scale = Vector2( 1.17966, 1.30089 )
+size_flags_stretch_ratio = 0.0
+text = " Eduardo  guerra 
+
+
+Gilmar da silva andrade
+
+
+Henrrique da silva souza "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit" type="Button" parent="CanvasLayer/butoncontainer"]
+margin_top = 86.0
+margin_right = 288.0
+margin_bottom = 106.0
+[connection signal="pressed" from="CanvasLayer/butoncontainer/play_game " to="." method="_on_play_game__pressed"]
+[connection signal="pressed" from="CanvasLayer/butoncontainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/butoncontainer/quit" to="." method="_on_quit_pressed"]
