@@ -79,7 +79,7 @@ __meta__ = {
 
 [node name="menu_0004_Elipse-1" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 237.947, 320.614 )
-rotation = 1.85286
+rotation = 4.49718
 texture = ExtResource( 7 )
 
 [node name="menu_0006_Plano-de-Fundo-copiar-3" type="Sprite" parent="CanvasLayer"]
@@ -113,18 +113,18 @@ __meta__ = {
 
 [node name="menu_0005_Elipse-1-copiar2" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 401.474, 346.617 )
-rotation = 4.43033
+rotation = 1.786
 texture = ExtResource( 4 )
 
 [node name="menu_0005_Elipse-1-copiar3" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 306.115, 456.813 )
-rotation = 1.85286
+rotation = 4.49718
 scale = Vector2( 0.670183, 0.665532 )
 texture = ExtResource( 4 )
 
 [node name="menu_0005_Elipse-1-copiar4" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 415.04, 502.903 )
-rotation = 4.43033
+rotation = 1.786
 scale = Vector2( 0.670183, 0.665532 )
 texture = ExtResource( 4 )
 

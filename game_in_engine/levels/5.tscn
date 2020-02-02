@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://interact/key.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes_globais/checkpoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/background/background.jpg" type="Texture" id=10]
 [ext_resource path="res://interact/block.tscn" type="PackedScene" id=11]
+[ext_resource path="res://audio/Cyber-Sin-City (online-audio-converter (mp3cut.net).wav" type="AudioStream" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "subir"
@@ -162,7 +163,7 @@ extents = Vector2( 29.6336, 10 )
 position = Vector2( -245.295, 184.372 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 15.0641, -27.0069 )
+position = Vector2( 279.107, -29.4018 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
@@ -239,7 +240,9 @@ next_scene = 6
 [node name="checkpoint" parent="." instance=ExtResource( 9 )]
 position = Vector2( 242.119, -14.5507 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=[
+"trap",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 162.417, 107.596 )
@@ -255,6 +258,10 @@ texture = ExtResource( 10 )
 
 [node name="block" parent="." instance=ExtResource( 11 )]
 position = Vector2( -85.7036, 133.317 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
 
 [editable path="receiver_signal"]
 

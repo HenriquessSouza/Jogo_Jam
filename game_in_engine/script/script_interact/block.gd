@@ -14,10 +14,10 @@ func _physics_process(delta):
 		
 	in_hands = player_singleton.object_in_hand 
 	
-	if  Input.is_action_just_pressed("ui_shoot") and shooting == false :
-		if player_singleton.side_current == true :
+	if  Input.is_action_just_pressed("ui_shoot") and shooting == false:
+		if player_singleton.side_current == true  and player_in_area == true:
 			position.x -= force_shoot  
-		if player_singleton.side_current == false :
+		if player_singleton.side_current == false and player_in_area == true :
 			position.x += force_shoot
 			
 		shooting = true
