@@ -43,6 +43,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( -70.0469, 19.8202 ), Vector2( -70.0469, 19.8202 ), Vector2( -70.7838, 40.2691 ), Vector2( -70.4175, 51.7454 ), Vector2( -70.0878, 64.6757 ), Vector2( -69.9342, 70.9538 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 50.1248, 10 )
@@ -207,6 +219,7 @@ shape = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="receiver_signal2"]
 stream = ExtResource( 5 )
+volume_db = -5.0
 
 [node name="engine" parent="." instance=ExtResource( 6 )]
 position = Vector2( 928.678, -120.704 )
