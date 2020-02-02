@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://interact/portal.tscn" type="PackedScene" id=1]
 [ext_resource path="res://interact/receiver_signal.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/tilestes/Tile_Teste.png" type="Texture" id=6]
 [ext_resource path="res://interact/key.tscn" type="PackedScene" id=7]
 [ext_resource path="res://interact/engine.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/background/background.jpg" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "teste"
@@ -231,6 +232,15 @@ emiter_value = {
 "signal5": false,
 "signal6": false
 }
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1023.96, 0 )
+
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 511.486, -267.261 )
+texture = ExtResource( 9 )
 
 [editable path="receiver_signal"]
 
