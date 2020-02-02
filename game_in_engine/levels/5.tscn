@@ -161,12 +161,14 @@ extents = Vector2( 29.6336, 10 )
 position = Vector2( -245.295, 184.372 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
 position = Vector2( 15.0641, -27.0069 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-visible = false
 current = true
+zoom = Vector2( 0.8, 0.8 )
+limit_left = -290
+limit_right = 600
+limit_bottom = 270
 
 [node name="receiver_signal" parent="." instance=ExtResource( 3 )]
 position = Vector2( 120.189, -52.9865 )

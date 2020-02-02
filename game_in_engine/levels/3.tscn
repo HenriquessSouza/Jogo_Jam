@@ -198,8 +198,14 @@ position = Vector2( 92.1498, -37.0499 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
+zoom = Vector2( 0.8, 0.8 )
+limit_left = 0
+limit_top = -380
+limit_right = 1350
+limit_bottom = 225
 
 [node name="receiver_signal" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 612.749, -0.949997 )
 receiver_channel = 1
 name_animation = "roda"
@@ -268,6 +274,7 @@ emiter_value = {
 }
 
 [node name="receiver_signal2" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 receiver_channel = 2
 name_animation = "linha"
 
@@ -286,6 +293,7 @@ scale = Vector2( 1.63078, 1.23654 )
 texture = ExtResource( 5 )
 
 [node name="receiver_signal3" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 receiver_channel = 3
 name_animation = "descida"
 
