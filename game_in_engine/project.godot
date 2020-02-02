@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="ReBuilD"
 run/main_scene="res://scenes_globais/apresentation_scene.tscn"
-config/icon="res://icon.png"
+config/icon="res://player/gr.punch/grpunch/grpunch10.png"
 
 [autoload]
 
