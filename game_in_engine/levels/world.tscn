@@ -1,21 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://interact/block.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes_globais/checkpoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://player/gui_keys.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player/gui_keys.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://interact/block.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 419, 10 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 114.861, 92.8032 )
 
 [node name="world" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="gui_keys" parent="CanvasLayer" instance=ExtResource( 6 )]
+[node name="gui_keys" parent="CanvasLayer" instance=ExtResource( 1 )]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -23,24 +19,11 @@ extents = Vector2( 114.861, 92.8032 )
 position = Vector2( 408, 193 )
 shape = SubResource( 1 )
 
-[node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 522.987, 144.34 )
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 254, 16 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
 
-[node name="block" parent="." instance=ExtResource( 2 )]
+[node name="block" parent="." instance=ExtResource( 3 )]
 position = Vector2( 234.084, 84.7015 )
-
-[node name="Area2D" type="Area2D" parent="." groups=[
-"trap",
-]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
-"trap",
-]]
-position = Vector2( 107.243, 123.066 )
-shape = SubResource( 2 )
-
-[node name="checkpoint" parent="Area2D/CollisionShape2D" instance=ExtResource( 3 )]
-position = Vector2( 332.278, 45.7103 )

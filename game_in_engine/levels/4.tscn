@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://interact/block.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/tilestes/Tile_Teste.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/interactive items/Plataforma.png" type="Texture" id=9]
 [ext_resource path="res://assets/interactive items/ponte.png" type="Texture" id=10]
 [ext_resource path="res://interact/portal.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/background/background.jpg" type="Texture" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -296,6 +297,15 @@ texture = ExtResource( 10 )
 [node name="portal" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1189.68, -122.631 )
 next_scene = 5
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 511.698, -239.817 )
+texture = ExtResource( 12 )
 
 [editable path="receiver_signal2"]
 
