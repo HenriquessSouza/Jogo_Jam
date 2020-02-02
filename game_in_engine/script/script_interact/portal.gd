@@ -6,8 +6,9 @@ export var next_scene = 0
 
 
 func _on_portal_body_entered(body):
-	var path = "res://levels/"+str(next_scene)+".tscn"
+	
 	if body.is_in_group("player"):
+		var path = "res://levels/"+str(next_scene)+".tscn"
 		machine_singleton.emitter_value.sinal1= false
 		machine_singleton.emitter_value.sinal2 = false
 		machine_singleton.emitter_value.sinal3= false

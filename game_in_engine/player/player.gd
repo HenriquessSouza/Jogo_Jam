@@ -75,6 +75,7 @@ func _on_foot_area_body_entered(body):
 func _on_foot_area_body_exited(body):
 	if body.is_in_group("plataform"):
 		in_plataform = false
+	
 
 
 
@@ -87,6 +88,7 @@ func _on_body_area_area_entered(area):
 		death = true
 		$delay_death.start()
 
-
+	if area.name == "areaporta":
+		get_tree().change_scene("res://levels/7.tscn")
 func _on_delay_death_timeout():
 	restart_position_checkpoint()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assets/background/background.jpg" type="Texture" id=1]
 [ext_resource path="res://interact/receiver_signal.tscn" type="PackedScene" id=2]
@@ -204,9 +204,14 @@ colors = PoolColorArray( 0.957627, 0.922353, 0.692035, 1, 0.921875, 0.682584, 0.
 [sub_resource type="GradientTexture" id=17]
 gradient = SubResource( 16 )
 
-[sub_resource type="CurveTexture" id=18]
+[sub_resource type="Curve" id=18]
+min_value = -1.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="CurveTexture" id=19]
+curve = SubResource( 18 )
+
+[sub_resource type="ParticlesMaterial" id=20]
 lifetime_randomness = 0.43
 flag_disable_z = true
 spread = 52.83
@@ -219,9 +224,9 @@ radial_accel_random = 0.31
 tangential_accel = 15.94
 damping = 19.57
 color_ramp = SubResource( 17 )
-hue_variation_curve = SubResource( 18 )
+hue_variation_curve = SubResource( 19 )
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=21]
 length = 20.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("receiver_signal2/Nave2:position")
@@ -491,7 +496,6 @@ tile_data = PoolIntArray( -2490341, 1, 0, -2490340, 1, 0, -2490339, 1, 0, -24903
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="gui_keys" parent="CanvasLayer" instance=ExtResource( 10 )]
-visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 visible = false
@@ -560,7 +564,7 @@ amount = 1000
 lifetime = 2.0
 explosiveness = 0.04
 randomness = 0.38
-process_material = SubResource( 19 )
+process_material = SubResource( 20 )
 
 [node name="key" parent="." instance=ExtResource( 14 )]
 position = Vector2( 578.783, -24.4354 )
@@ -574,7 +578,7 @@ stream = ExtResource( 17 )
 volume_db = -3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-"anims/navedecolando " = SubResource( 20 )
+"anims/navedecolando " = SubResource( 21 )
 [connection signal="body_entered" from="receiver_signal2/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Panel/Button" to="." method="_on_Button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

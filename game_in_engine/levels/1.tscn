@@ -154,9 +154,13 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 1159.87, 10 )
+extents = Vector2( 1159.87, 23.7814 )
 
 [node name="1" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gui_keys" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -219,11 +223,6 @@ limit_left = 0
 limit_right = 1100
 limit_bottom = 50
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="gui_keys" parent="CanvasLayer" instance=ExtResource( 6 )]
-visible = false
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 14 )
 cell_size = Vector2( 16, 16 )
@@ -252,7 +251,7 @@ emiter_value = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
 "trap",
 ]]
-position = Vector2( 177.679, 78.3696 )
+position = Vector2( 177.679, 74.8705 )
 shape = SubResource( 15 )
 
 [node name="checkpoint" parent="." instance=ExtResource( 10 )]

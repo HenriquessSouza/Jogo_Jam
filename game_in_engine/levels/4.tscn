@@ -224,7 +224,6 @@ extents = Vector2( 60.0287, 10 )
 [node name="4" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 1024, 0 )
@@ -254,7 +253,6 @@ limit_right = 1015
 limit_bottom = 80
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="gui_keys" parent="CanvasLayer" instance=ExtResource( 6 )]
 visible = false
@@ -275,7 +273,6 @@ emiter_value = {
 }
 
 [node name="receiver_signal2" parent="." instance=ExtResource( 9 )]
-editor/display_folded = true
 receiver_channel = 1
 name_animation = "queda"
 
@@ -316,7 +313,6 @@ anims/ponte = SubResource( 16 )
 stream = ExtResource( 11 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="receiver_signal"]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="receiver_signal/StaticBody2D"]
 position = Vector2( 359.648, 104.411 )

@@ -7,14 +7,18 @@
 extents = Vector2( 3.6706, 38.3147 )
 
 [node name="checkpoint" type="Area2D"]
+position = Vector2( 0, -17.5611 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.00526428, -37.9778 )
+position = Vector2( -0.00526428, -19.5805 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="CollisionShape2D"]
-position = Vector2( 0.17363, 15.1887 )
+position = Vector2( -0.662613, 10.5894 )
 scale = Vector2( 0.387991, 0.316656 )
 texture = ExtResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( -0.836243, -6.27181 )
 [connection signal="body_entered" from="." to="." method="_on_checkpoint_body_entered"]
