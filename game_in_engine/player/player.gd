@@ -77,6 +77,6 @@ func _on_body_area_body_entered(body):
 	if body.is_in_group("trap"):
 		$animationplayer.play("death")
 
-func _on_animationplayer_animation_finished(anim_name):
-	if anim_name == "death":
+func _on_animationplayer_animation_finished():
+	if $animationplayer.play("death"):
 		restart_position_checkpoint()
