@@ -162,7 +162,6 @@ position = Vector2( 1142.45, -298.015 )
 next_scene = 2
 
 [node name="receiver_signal" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
 position = Vector2( 165.855, -19.9026 )
 receiver_channel = 1
 name_animation = "teste"
@@ -182,7 +181,6 @@ scale = Vector2( 1.73251, 1.24214 )
 texture = ExtResource( 3 )
 
 [node name="receiver_signal2" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
 position = Vector2( 1142.45, -298.015 )
 receiver_channel = 1
 name_animation = "subidaa"
@@ -212,7 +210,6 @@ limit_right = 1100
 limit_bottom = 50
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="gui_keys" parent="CanvasLayer" instance=ExtResource( 5 )]
 visible = false
@@ -249,7 +246,6 @@ texture = ExtResource( 9 )
 [node name="Area2D" type="Area2D" parent="." groups=[
 "trap",
 ]]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
 "trap",

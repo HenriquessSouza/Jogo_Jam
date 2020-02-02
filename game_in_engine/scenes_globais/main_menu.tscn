@@ -1,6 +1,71 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://script/interface/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://audio/Cosmic-Switchboard_Looping (online-audio-converter.com).wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/fonts/DiscoRush.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes_globais/menu_0005_Elipse-1-copiar.png" type="Texture" id=4]
+[ext_resource path="res://scenes_globais/menu_0006_Plano-de-Fundo-copiar-3.png" type="Texture" id=6]
+[ext_resource path="res://scenes_globais/menu_0004_Elipse-1.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=2]
+size = 233
+extra_spacing_top = 7
+extra_spacing_char = 26
+extra_spacing_space = 2
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "animation_mano"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/menu_0004_Elipse-1:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 360.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/menu_0005_Elipse-1-copiar2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/menu_0005_Elipse-1-copiar3:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 360.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/menu_0005_Elipse-1-copiar4:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
@@ -11,6 +76,17 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="menu_0004_Elipse-1" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 237.947, 320.614 )
+rotation = 1.85286
+texture = ExtResource( 7 )
+
+[node name="menu_0006_Plano-de-Fundo-copiar-3" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 512.376, 289.09 )
+scale = Vector2( 2.15909, 1.29998 )
+z_index = -3
+texture = ExtResource( 6 )
 
 [node name="text_info" type="Label" parent="CanvasLayer"]
 margin_left = 14.9514
@@ -23,15 +99,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_right = 1.0
+margin_left = 135.5
+margin_top = -1.0
+margin_right = -59.4996
+margin_bottom = 343.0
+custom_fonts/font = SubResource( 2 )
+text = "ReBuiLD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu_0005_Elipse-1-copiar2" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 401.474, 346.617 )
+rotation = 4.43033
+texture = ExtResource( 4 )
+
+[node name="menu_0005_Elipse-1-copiar3" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 306.115, 456.813 )
+rotation = 1.85286
+scale = Vector2( 0.670183, 0.665532 )
+texture = ExtResource( 4 )
+
+[node name="menu_0005_Elipse-1-copiar4" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 415.04, 502.903 )
+rotation = 4.43033
+scale = Vector2( 0.670183, 0.665532 )
+texture = ExtResource( 4 )
+
 [node name="butoncontainer" type="VBoxContainer" parent="CanvasLayer"]
 anchor_left = 1.022
 anchor_top = 0.551
 anchor_right = 1.138
 anchor_bottom = 0.553
-margin_left = -360.186
-margin_top = 14.4
-margin_right = -190.97
-margin_bottom = 119.2
+margin_left = -348.73
+margin_top = 78.8388
+margin_right = -179.514
+margin_bottom = 183.639
 rect_min_size = Vector2( -0.261, 0 )
 rect_scale = Vector2( 1.017, 1.382 )
 custom_constants/separation = 23
@@ -42,11 +147,20 @@ __meta__ = {
 [node name="play_game " type="Button" parent="CanvasLayer/butoncontainer"]
 margin_right = 288.0
 margin_bottom = 20.0
+custom_colors/font_color = Color( 1, 0.890196, 0.890196, 1 )
+custom_colors/font_color_hover = Color( 0.364706, 0.0392157, 0.0392157, 1 )
+custom_colors/font_color_pressed = Color( 0.909804, 0.0627451, 0.0627451, 1 )
+text = "play game"
 
 [node name="credits" type="Button" parent="CanvasLayer/butoncontainer"]
 margin_top = 43.0
 margin_right = 288.0
 margin_bottom = 63.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 0.956863, 0.956863, 1 )
+custom_colors/font_color_hover = Color( 0.537255, 0.0980392, 0.0980392, 1 )
+custom_colors/font_color_pressed = Color( 0.901961, 0.0588235, 0.0588235, 1 )
+text = "credts"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/butoncontainer/credits"]
 visible = false
@@ -84,6 +198,19 @@ __meta__ = {
 margin_top = 86.0
 margin_right = 288.0
 margin_bottom = 106.0
+custom_colors/font_color = Color( 0.905882, 0.894118, 0.894118, 1 )
+custom_colors/font_color_hover = Color( 0.513726, 0.0470588, 0.0470588, 1 )
+custom_colors/font_color_pressed = Color( 0.85098, 0.145098, 0.145098, 1 )
+text = "Quit Game"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -7.635
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "animation_mano"
+anims/animation_mano = SubResource( 1 )
 [connection signal="pressed" from="CanvasLayer/butoncontainer/play_game " to="." method="_on_play_game__pressed"]
 [connection signal="pressed" from="CanvasLayer/butoncontainer/credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/butoncontainer/quit" to="." method="_on_quit_pressed"]
