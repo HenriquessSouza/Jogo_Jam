@@ -1,24 +1,24 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://player/run/walk.run/run2.png" type="Texture" id=1]
-[ext_resource path="res://player/player.gd" type="Script" id=2]
-[ext_resource path="res://player/ilde/idle/sprite_1.png" type="Texture" id=3]
-[ext_resource path="res://player/run/walk.run/run1.png" type="Texture" id=4]
-[ext_resource path="res://player/carry/carry/carry3.png" type="Texture" id=5]
-[ext_resource path="res://player/carry/carry/carry2.png" type="Texture" id=6]
-[ext_resource path="res://player/run/walk.run/run4.png" type="Texture" id=7]
-[ext_resource path="res://player/carry/carry/carry1.png" type="Texture" id=8]
-[ext_resource path="res://player/run/walk.run/run3.png" type="Texture" id=9]
-[ext_resource path="res://player/carry/carry/carry4.png" type="Texture" id=10]
-[ext_resource path="res://player/death/death/sprite_7.png" type="Texture" id=11]
-[ext_resource path="res://player/death/death/sprite_4.png" type="Texture" id=12]
-[ext_resource path="res://player/death/death/sprite_0.png" type="Texture" id=13]
-[ext_resource path="res://player/death/death/sprite_3.png" type="Texture" id=14]
-[ext_resource path="res://player/death/death/sprite_5.png" type="Texture" id=15]
-[ext_resource path="res://player/death/death/sprite_2.png" type="Texture" id=16]
-[ext_resource path="res://player/death/death/sprite_6.png" type="Texture" id=17]
-[ext_resource path="res://player/death/death/sprite_1.png" type="Texture" id=18]
-[ext_resource path="res://player/ilde/idle/sprite_0.png" type="Texture" id=19]
+[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/death/death/sprite_0.png" type="Texture" id=2]
+[ext_resource path="res://player/death/death/sprite_1.png" type="Texture" id=3]
+[ext_resource path="res://player/death/death/sprite_2.png" type="Texture" id=4]
+[ext_resource path="res://player/death/death/sprite_3.png" type="Texture" id=5]
+[ext_resource path="res://player/death/death/sprite_4.png" type="Texture" id=6]
+[ext_resource path="res://player/death/death/sprite_5.png" type="Texture" id=7]
+[ext_resource path="res://player/death/death/sprite_6.png" type="Texture" id=8]
+[ext_resource path="res://player/death/death/sprite_7.png" type="Texture" id=9]
+[ext_resource path="res://player/run/walk.run/run1.png" type="Texture" id=10]
+[ext_resource path="res://player/run/walk.run/run2.png" type="Texture" id=11]
+[ext_resource path="res://player/run/walk.run/run3.png" type="Texture" id=12]
+[ext_resource path="res://player/run/walk.run/run4.png" type="Texture" id=13]
+[ext_resource path="res://player/ilde/idle/sprite_0.png" type="Texture" id=14]
+[ext_resource path="res://player/ilde/idle/sprite_1.png" type="Texture" id=15]
+[ext_resource path="res://player/carry/carry/carry1.png" type="Texture" id=16]
+[ext_resource path="res://player/carry/carry/carry2.png" type="Texture" id=17]
+[ext_resource path="res://player/carry/carry/carry3.png" type="Texture" id=18]
+[ext_resource path="res://player/carry/carry/carry4.png" type="Texture" id=19]
 [ext_resource path="res://audio/death_sound.wav" type="AudioStream" id=20]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -30,25 +30,25 @@ extents = Vector2( 8.32838, 9.08421 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 9 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "death",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "graby",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "idlle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 11 ) ],
-"loop": false,
-"name": "death",
-"speed": 6.0
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "graby",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -61,7 +61,7 @@ height = 7.68758
 [node name="player" type="KinematicBody2D" groups=[
 "player",
 ]]
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
 "player",
@@ -108,10 +108,7 @@ stream = ExtResource( 20 )
 pitch_scale = 1.1
 [connection signal="body_entered" from="area_hand" to="." method="_on_area_hand_body_entered"]
 [connection signal="body_exited" from="area_hand" to="." method="_on_area_hand_body_exited"]
-[connection signal="timeout" from="delay_graby" to="." method="_on_delay_graby_timeout"]
-[connection signal="animation_finished" from="animationplayer" to="." method="_on_animationplayer_animation_finished"]
 [connection signal="body_entered" from="foot_area" to="." method="_on_foot_area_body_entered"]
 [connection signal="body_exited" from="foot_area" to="." method="_on_foot_area_body_exited"]
 [connection signal="area_entered" from="body_area" to="." method="_on_body_area_area_entered"]
-[connection signal="body_entered" from="body_area" to="." method="_on_body_area_body_entered"]
 [connection signal="timeout" from="delay_death" to="." method="_on_delay_death_timeout"]

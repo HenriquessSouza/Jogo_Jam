@@ -62,8 +62,6 @@ func _on_area_hand_body_exited(body):
 
 
 
-func _on_delay_graby_timeout(body):
-	pass
 
 
 func _on_foot_area_body_entered(body):
