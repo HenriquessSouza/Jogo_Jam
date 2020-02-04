@@ -251,7 +251,7 @@ emiter_value = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
 "trap",
 ]]
-position = Vector2( 177.679, 74.8705 )
+position = Vector2( 177.679, 71.6274 )
 shape = SubResource( 15 )
 
 [node name="checkpoint" parent="." instance=ExtResource( 10 )]

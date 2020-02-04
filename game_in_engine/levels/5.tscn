@@ -155,7 +155,7 @@ tracks/0/keys = {
 extents = Vector2( 29.6219, 4.33388 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 29.6336, 10 )
+extents = Vector2( 29.6336, 6.04881 )
 
 [node name="5" type="Node2D"]
 
@@ -217,6 +217,15 @@ shape = SubResource( 14 )
 position = Vector2( -5.50006, 3.55885 )
 texture = ExtResource( 4 )
 
+[node name="Area2D2" type="Area2D" parent="receiver_signal2/StaticBody2D/CollisionShape2D" groups=[
+"trap",
+]]
+position = Vector2( -746.419, -98.7349 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="receiver_signal2/StaticBody2D/CollisionShape2D/Area2D2"]
+position = Vector2( 751.264, 108.368 )
+shape = SubResource( 15 )
+
 [node name="engine" parent="." instance=ExtResource( 6 )]
 position = Vector2( -27.504, 199.698 )
 z_index = -1
@@ -243,6 +252,7 @@ position = Vector2( 241.601, -19.4324 )
 [node name="Area2D" type="Area2D" parent="." groups=[
 "trap",
 ]]
+position = Vector2( 4.6427, -5.41647 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 162.417, 113.784 )
@@ -253,6 +263,7 @@ shape = SubResource( 15 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
 position = Vector2( 169.434, -31.2596 )
 texture = ExtResource( 10 )
 
